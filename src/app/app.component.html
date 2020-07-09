@@ -1,0 +1,290 @@
+<div style="width: 1200px;">   
+  <div class="same-row" style="font-weight: bold;">  
+    As on : {{currentDate}}  
+  </div>  
+  <div class="same-row">  
+      <mat-form-field appearance="fill" style="width: 300px;">  
+          <mat-label>Choose a Country</mat-label>  
+          <mat-select [(value)]="selectedCountryData">  
+              <mat-option *ngFor="let country of summaryData?.Countries" [value]="country">{{country.Country}}  
+              </mat-option>  
+          </mat-select>  
+      </mat-form-field>  
+  </div>  
+</div>  
+<div>  
+  <div class="same-row">  
+      <mat-card class="covid-card">  
+          <mat-card-header>  
+              <div mat-card-avatar>  
+                  <img  
+                      src="https://www.sanlam.co.uk/web/media/media/vectors%2018/globe_light_blue_rgb.png?width=32&height=32&mode=crop">  
+              </div>  
+              <mat-card-title>Global Summary</mat-card-title>  
+              <mat-card-subtitle>Total Countries</mat-card-subtitle>  
+          </mat-card-header>  
+          <mat-card-content>  
+              <table>  
+                  <tr>  
+                      <td>  
+                          New Recovered  
+                      </td>  
+                      <td>  
+                          {{summaryData?.Global?.NewRecovered | number}}  
+                      </td>  
+                  </tr>  
+                  <tr>  
+                      <td>  
+                          Total Recovered  
+                      </td>  
+                      <td>  
+                          {{summaryData?.Global?.TotalRecovered | number}}  
+                      </td>  
+                  </tr>  
+                  <tr>  
+                      <td>  
+                          New Confirmed  
+                      </td>  
+                      <td>  
+                          {{summaryData?.Global?.NewConfirmed | number}}  
+                      </td>  
+                  </tr>  
+                  <tr>  
+                      <td>  
+                          Total Confirmed  
+                      </td>  
+                      <td>  
+                          {{summaryData?.Global?.TotalConfirmed | number}}  
+                      </td>  
+                  </tr>  
+                  <tr>  
+                      <td>  
+                          New Deaths  
+                      </td>  
+                      <td>  
+                          {{summaryData?.Global?.NewDeaths | number}}  
+                      </td>  
+                  </tr>  
+                  <tr>  
+                      <td>  
+                          Total Deaths  
+                      </td>  
+                      <td>  
+                          {{summaryData?.Global?.TotalDeaths | number}}  
+                      </td>  
+                  </tr>  
+              </table>  
+          </mat-card-content>  
+      </mat-card>  
+  </div>
+  <div class="same-row">  
+    <mat-card class="covid-card">  
+        <mat-card-header>  
+            <div mat-card-avatar>  
+                <img src="https://www.countryflags.io/EG/shiny/32.png">  
+            </div>  
+            <mat-card-title>Country Summary</mat-card-title>  
+            <mat-card-subtitle>Egypt</mat-card-subtitle>  
+        </mat-card-header>  
+        <mat-card-content>  
+            <table>  
+                <tr>  
+                    <td>  
+                        New Recovered  
+                    </td>  
+                    <td>  
+                        {{egyptData?.NewRecovered | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        Total Recovered  
+                    </td>  
+                    <td>  
+                        {{egyptData?.TotalRecovered | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        New Confirmed  
+                    </td>  
+                    <td>  
+                        {{egyptData?.NewConfirmed | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        Total Confirmed  
+                    </td>  
+                    <td>  
+                        {{egyptData?.TotalConfirmed | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        New Deaths  
+                    </td>  
+                    <td>  
+                        {{egyptData?.NewDeaths | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        Total Deaths  
+                    </td>  
+                    <td>  
+                        {{egyptData?.TotalDeaths | number}}  
+                    </td>  
+                </tr>  
+            </table>  
+        </mat-card-content>  
+    </mat-card>  
+</div>  
+
+<div class="same-row" *ngIf="selectedCountryData!=undefined">  
+    <mat-card class="covid-card">  
+        <mat-card-header>  
+            <div mat-card-avatar>  
+                <img src="https://www.countryflags.io/{{selectedCountryData.CountryCode}}/shiny/32.png">  
+            </div>  
+            <mat-card-title>Country Summary</mat-card-title>  
+            <mat-card-subtitle>{{selectedCountryData.Country}}</mat-card-subtitle>  
+        </mat-card-header>  
+        <mat-card-content>  
+            <table>  
+                <tr>  
+                    <td>  
+                        New Recovered  
+                    </td>  
+                    <td>  
+                        {{selectedCountryData?.NewRecovered | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        Total Recovered  
+                    </td>  
+                    <td>  
+                        {{selectedCountryData?.TotalRecovered | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        New Confirmed  
+                    </td>  
+                    <td>  
+                        {{selectedCountryData?.NewConfirmed | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        Total Confirmed  
+                    </td>  
+                    <td>  
+                        {{selectedCountryData?.TotalConfirmed | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        New Deaths  
+                    </td>  
+                    <td>  
+                        {{selectedCountryData?.NewDeaths | number}}  
+                    </td>  
+                </tr>  
+                <tr>  
+                    <td>  
+                        Total Deaths  
+                    </td>  
+                    <td>  
+                        {{selectedCountryData?.TotalDeaths | number}}  
+                    </td>  
+                </tr>  
+            </table>  
+        </mat-card-content>  
+    </mat-card>  
+</div>  
+</div>  
+<div>  
+<div class="same-row table-data">  
+    <p style="font-weight: bold; color: darkgreen; font-size: large;">Highest Recovered Cases</p>  
+    <table>  
+        <tr>  
+            <td style="font-weight: bold;">  
+                Sl.No.  
+            </td>  
+            <td style="font-weight: bold;">  
+                Country  
+            </td>  
+            <td style="font-weight: bold;">  
+                Total Recovered  
+            </td>  
+        </tr>  
+        <tr *ngFor="let country of highlyRecoveredData; let i=index">  
+            <td>  
+                {{i+1}}  
+            </td>  
+            <td>  
+                {{country.Country}}  
+            </td>  
+            <td>  
+                {{country.TotalRecovered | number}}  
+            </td>  
+        </tr>  
+    </table>  
+</div>  
+<div class="same-row table-data">  
+    <p style="font-weight: bold; color:gray; font-size: large;">Highest Confirmed Cases</p>  
+    <table>  
+        <tr>  
+            <td style="font-weight: bold;">  
+                Sl.No.  
+            </td>  
+            <td style="font-weight: bold;">  
+                Country  
+            </td>  
+            <td style="font-weight: bold;">  
+                Total Confirmed  
+            </td>  
+        </tr>  
+        <tr *ngFor="let country of highlyConfirmedData; let i=index">  
+            <td>  
+                {{i+1}}  
+            </td>  
+            <td>  
+                {{country.Country}}  
+            </td>  
+            <td>  
+                {{country.TotalConfirmed | number}}  
+            </td>  
+        </tr>  
+    </table>  
+</div>  
+<div class="same-row table-data">  
+    <p style="font-weight: bold; color: indianred; font-size: large;">Highest Death Cases</p>  
+    <table>  
+        <tr>  
+            <td style="font-weight: bold;">  
+                Sl.No.  
+            </td>  
+            <td style="font-weight: bold;">  
+                Country  
+            </td>  
+            <td style="font-weight: bold;">  
+                Total Deaths  
+            </td>  
+        </tr>  
+        <tr *ngFor="let country of highlyDeathData; let i=index">  
+            <td>  
+                {{i+1}}  
+            </td>  
+            <td>  
+                {{country.Country}}  
+            </td>  
+            <td>  
+                {{country.TotalDeaths | number}}  
+            </td>  
+        </tr>  
+    </table>  
+  </div>  
+</div>  

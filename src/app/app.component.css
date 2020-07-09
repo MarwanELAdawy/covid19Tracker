@@ -1,0 +1,31 @@
+.covid-card {  
+    max-width: 350px;  
+}  
+  
+.same-row {  
+    display: inline-block;  
+    padding: 10px;  
+}  
+  
+.table-data {  
+    padding: 10px;  
+    margin: 10px;  
+}  
+  
+table {  
+    padding: 10px;  
+    width: 300px;  
+    border: 1px solid gray;  
+    background-color: rgb(240, 245, 255);  
+}  
+  
+tr {  
+    margin: 10px;  
+    padding: 10px;  
+}  
+  
+td {  
+    height: 30px;  
+    vertical-align: center;  
+    border: 1px dotted gray;  
+}  
